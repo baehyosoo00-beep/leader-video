@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Leaders</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    font-family: sans-serif;
+    color: white;
+}
+
+#screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    transition: opacity 0.5s;
+}
+
+iframe {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="screen">
+늘 감사한 우리 리더님들께...
+</div>
+
+<script>
+
+let step = 0;
+
+document.body.addEventListener("click", () => {
+
+    const screen = document.getElementById("screen");
+
+    if(step === 0){
+
+        screen.style.opacity = 0;
+
+        setTimeout(() => {
+            screen.innerHTML = "1텀동안 고생 많으셨습니다!";
+            screen.style.opacity = 1;
+        }, 500);
+
+        step++;
+    }
+
+    else if(step === 1){
+
+        document.body.innerHTML = `
+        <iframe
+        src="https://player.vimeo.com/video/1196006456?autoplay=1"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+        </iframe>
+        `;
+    }
+
+});
+
+</script>
+
+</body>
+</html>
